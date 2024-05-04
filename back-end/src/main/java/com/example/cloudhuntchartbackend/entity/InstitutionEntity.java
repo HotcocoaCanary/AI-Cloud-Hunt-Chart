@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Institution实体类，一个neo4j的节点
+ * Institution实体类
  */
-@Node(labels = "Institution") // 标签名，labels可以缺省
+@Node(labels = "Institution")
 @Data
 public class InstitutionEntity {
 

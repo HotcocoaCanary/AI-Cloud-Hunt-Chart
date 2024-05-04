@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Neo4jDataFormat {
 
-    public String transformData(String data){
+    public String transformData(String data) {
         // 创建一个 JsonObject 对象
         JsonObject jsonObject = new JsonObject();
 
@@ -40,8 +40,8 @@ public class Neo4jDataFormat {
         graphObject.add("relationships", relationshipsArray);
 
         // 将 graphObject 添加到 dataArray
-        JsonObject graph= new JsonObject();
-        graph.add("graph",graphObject);
+        JsonObject graph = new JsonObject();
+        graph.add("graph", graphObject);
         dataArray.add(graph);
 
         // 将 resultObject 添加到 resultsArray
@@ -59,11 +59,12 @@ public class Neo4jDataFormat {
         // 将 jsonObject 转换为字符串
         return jsonObject.toString();
     }
+
     private JsonArray transformNodes(String data) {
         List<JsonObject> relationshipList = new ArrayList<>();
 //        Set<JsonObject> addedObjects = new HashSet<>();
 
-        JsonParser jsonParser=new JsonParser();
+        JsonParser jsonParser = new JsonParser();
         JsonElement jsonElement = jsonParser.parse(data);
 
         if (jsonElement.isJsonArray()) {
@@ -99,6 +100,7 @@ public class Neo4jDataFormat {
         relationshipList.forEach(jsonArray::add);
         return jsonArray;
     }
+
     private JsonArray transformRelationship(String data) {
         List<JsonObject> relationshipList = new ArrayList<>();
 

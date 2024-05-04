@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * PMID实体类，一个neo4j的节点
+ * PMID实体类
  */
 @Node(labels = "PMID")
 @Data
@@ -48,25 +48,25 @@ public class PMIDEntity {
     }
 
     public PMIDEntity(int number, String string, String type) {
-        if(Objects.equals(type, "periodical")){
+        if (Objects.equals(type, "periodical")) {
             this.id = null;
             this.number = number;
             this.periodical = string;
         }
-        if(Objects.equals(type, "keyword")){
+        if (Objects.equals(type, "keyword")) {
             this.id = null;
             this.number = number;
             this.keyword = string;
         }
-        if(Objects.equals(type, "title")){
+        if (Objects.equals(type, "title")) {
             this.id = null;
             this.number = number;
             this.title = string;
         }
-        if(Objects.equals(type, "date")){
+        if (Objects.equals(type, "date")) {
             this.id = null;
             this.number = number;
-            this.date = new Date(Integer.parseInt(string)/ 10000, (Integer.parseInt(string) % 10000) / 100, Integer.parseInt(string) % 100);
+            this.date = new Date(Integer.parseInt(string) / 10000, (Integer.parseInt(string) % 10000) / 100, Integer.parseInt(string) % 100);
         }
     }
 }

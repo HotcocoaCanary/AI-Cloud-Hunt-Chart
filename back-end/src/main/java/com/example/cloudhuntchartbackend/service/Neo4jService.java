@@ -3,7 +3,9 @@ package com.example.cloudhuntchartbackend.service;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import org.neo4j.driver.*;
+import org.neo4j.driver.Driver;
+import org.neo4j.driver.Session;
+import org.neo4j.driver.SessionConfig;
 import org.neo4j.driver.types.Node;
 import org.neo4j.driver.types.Relationship;
 import org.springframework.data.neo4j.core.DatabaseSelectionProvider;
@@ -53,8 +55,8 @@ public class Neo4jService {
         }
 
         JsonObject result = new JsonObject();
-        result.add("nodes",nodesJsonArray);
-        result.add("relationships",relationshipsJsonArray);
+        result.add("nodes", nodesJsonArray);
+        result.add("relationships", relationshipsJsonArray);
 
         return result;
     }
@@ -70,7 +72,7 @@ public class Neo4jService {
         return databaseSelectionProvider.getDatabaseSelection().getValue();
     }
 
-    public JsonObject transformData(){
+    public JsonObject transformData() {
         // 创建一个 JsonObject 对象
         JsonObject jsonObject = new JsonObject();
 
@@ -100,8 +102,8 @@ public class Neo4jService {
         graphObject.add("relationships", relationshipsArray);
 
         // 将 graphObject 添加到 dataArray
-        JsonObject graph= new JsonObject();
-        graph.add("graph",graphObject);
+        JsonObject graph = new JsonObject();
+        graph.add("graph", graphObject);
         dataArray.add(graph);
 
         // 将 resultObject 添加到 resultsArray

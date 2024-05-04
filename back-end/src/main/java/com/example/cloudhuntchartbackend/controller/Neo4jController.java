@@ -11,7 +11,6 @@ public class Neo4jController {
 
     private final Neo4jService neo4jService;
 
-
     @Autowired
     public Neo4jController(Neo4jService neo4jService) {
         this.neo4jService = neo4jService;

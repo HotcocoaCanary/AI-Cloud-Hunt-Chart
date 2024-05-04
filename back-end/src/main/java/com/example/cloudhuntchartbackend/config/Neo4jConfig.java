@@ -9,13 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class Neo4jConfig {
-
-    //    @Value("${spring.neo4j.uri}")
-//    private static String URI;
-//    @Value("${spring.neo4j.authentication.username}")
-//    private static String USER;
-//    @Value("${spring.neo4j.authentication.password}")
-//    private static String PASSWORD;
     private static final String URI = "bolt://localhost:7687";
     private static final String USER = "neo4j";
     private static final String PASSWORD = "zwb052116";

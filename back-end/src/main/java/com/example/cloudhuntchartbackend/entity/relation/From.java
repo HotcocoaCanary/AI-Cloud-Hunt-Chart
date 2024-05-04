@@ -8,6 +8,9 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 import java.util.List;
 
+/**
+ * from关系
+ */
 @RelationshipProperties
 public class From {
 

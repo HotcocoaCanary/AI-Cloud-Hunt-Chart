@@ -6,9 +6,9 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 /**
- * Author实体类，一个neo4j的节点
+ * Author实体类
  */
-@Node(labels = "Author") // 标签名，labels可以缺省
+@Node(labels = "Author")
 @Data
 public class AuthorEntity {
 
