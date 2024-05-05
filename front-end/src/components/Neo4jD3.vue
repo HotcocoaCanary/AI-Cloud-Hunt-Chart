@@ -15,7 +15,7 @@ export default {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:2933/Knowledge-query-knowledge-map/query', {
+        const response = await fetch('http://localhost:2933/Cloud-Hunt-Chart-backend/query', {
           method: 'POST',
         });
         neo4jData.value = await response.json();

@@ -1,7 +1,10 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Login from "@/views/Login.vue";
 import Layout from "@/views/Layout.vue";
-import Home from "@/views/Home.vue";
+import Home from "@/views/home/Home.vue";
+import Chat from "@/views/chat/Chat.vue";
+import OverAll from "@/views/relation/OverAll.vue";
+import Search from "@/views/relation/Search.vue";
 
 //导入组件
 
@@ -19,6 +22,18 @@ const routes = [
             {
                 path: '/home',
                 component: Home
+            },
+            {
+                path: '/relation/overall',
+                component: OverAll
+            },
+            {
+                path: '/relation/search',
+                component: Search
+            },
+            {
+                path: '/chat',
+                component: Chat
             }
         ]
     }

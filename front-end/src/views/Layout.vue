@@ -1,24 +1,23 @@
 <script setup>
+
 import Aside from "@/components/Layout/Aside.vue";
 import Header from "@/components/Layout/Header.vue";
 </script>
 
 <template>
   <div class="common-layout">
-    <el-container>
-      <el-aside width="200px">
-        <Aside></Aside>
+    <el-container id="container">
+      <el-aside id="aside">
+        <Aside/>
       </el-aside>
       <el-container>
-        <el-header>
-          <Header></Header>
+        <el-header id="header">
+          <Header/>
         </el-header>
-        <el-main class="flex-1 overflow-auto">
+        <el-main id="main">
           <router-view></router-view>
         </el-main>
-        <el-footer class="flex-shrink-0">
-          AI云寻 ©2024 Created by Canary&Koala
-        </el-footer>
+        <el-footer id="footer">Footer</el-footer>
       </el-container>
     </el-container>
   </div>
@@ -26,7 +25,26 @@ import Header from "@/components/Layout/Header.vue";
 
 <style scoped>
 .common-layout {
-  height: 100vh; /* 设置高度为视口高度 */
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+#container {
+  height: 100%;
   width: 100%;
+  display: flex;
+}
+#aside {
+  width: auto; /* 设置宽度为auto */
+  flex: 0 0 auto; /* 关闭flex grow和shrink，基于内容宽度 */
+}
+#header {
+  background-color: darksalmon;
+}
+#main {
+  background-color: darkgreen;
+}
+#footer {
+  background-color: darkgoldenrod;
 }
 </style>
